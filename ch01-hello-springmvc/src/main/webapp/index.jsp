@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href="some.do">some.do</a>
+<a href="user/some.do">some.do</a>
 </body>
 </html>
