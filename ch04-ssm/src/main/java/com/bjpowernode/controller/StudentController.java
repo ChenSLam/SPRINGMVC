@@ -1,6 +1,9 @@
 package com.bjpowernode.controller;
 
 import com.bjpowernode.domain.Student;
+import com.bjpowernode.exception.AgeException;
+import com.bjpowernode.exception.MyUserException;
+import com.bjpowernode.exception.NameException;
 import com.bjpowernode.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +21,16 @@ public class StudentController {
 
     //注册学生
     @RequestMapping("/addStudent.do")
-    public ModelAndView addStudent(Student student){
+    public ModelAndView addStudent(Student student) throws MyUserException {
         ModelAndView mv = new ModelAndView();
+        //根据请求参数抛出异常
+        if (!"刘德华".equals(student.getName())){
+            throw new NameException("姓名不正确，不是刘德华");
+        }
+        if (student.getAge() == null || student.getAge()>80){
+            throw new AgeException("年龄不正确，或者是太老了");
+        }
+
         String tips = "注册失败";
         //调用service处理student
         int nums = service.addStudent(student);
