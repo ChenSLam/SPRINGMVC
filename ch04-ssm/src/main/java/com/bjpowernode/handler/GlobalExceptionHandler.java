@@ -50,7 +50,7 @@ public class GlobalExceptionHandler {
         ModelAndView mv = new ModelAndView();
         mv.addObject("msg","年纪太大了");
         mv.addObject("ex",ex);
-        mv.setViewName("AgeError");
+        mv.setViewName("ageError");
         return mv;
     }
     @ExceptionHandler(value = EmailException.class)
