@@ -25,7 +25,7 @@ public class StudentController {
         ModelAndView mv = new ModelAndView();
         //根据请求参数抛出异常
         if (!"刘德华".equals(student.getName())){
-            throw new NameException("姓名不正确，不是刘德华");
+            throw new NameException(" 只允许刘德华注册");
         }
         if (student.getAge() == null || student.getAge()>80){
             throw new AgeException("年龄不正确，或者是太老了");

@@ -19,6 +19,7 @@
 <body>
     <div align="center">
         <p>SSM整合的例子</p>
+
         <table>
             <tr>
                 <td><a href="addStudent.jsp">注册学生</a> </td>
@@ -28,6 +29,10 @@
             </tr>
         </table>
     </div>
+    <p>拦截器</p>
+    <form action="some.do" method="post">
+
+    </form>
 
 </body>
 </html>
